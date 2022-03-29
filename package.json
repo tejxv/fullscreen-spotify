@@ -1,0 +1,20 @@
+{
+  "name": "fullscreen-spotify",
+  "version": "1.0.0",
+  "author": "",
+  "license": "",
+  "description": "",
+  "main": "app.js",
+  "keywords": [],
+  "scripts": {
+    "start": "node .",
+    "dev": "nodemon .",
+    "build": "browserify ./public/fullscreen/script-before-build.js -o ./public/fullscreen/script.js"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "crypto": "^1.0.1",
+    "express": "^4.17.3",
+    "lastfm": "^0.9.3"
+  }
+}

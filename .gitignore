@@ -1,0 +1,5 @@
+node_modules/
+template/
+
+package-lock.json
+public/fullscreen/script.js
