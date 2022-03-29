@@ -6,8 +6,8 @@ const cookieUsername = document.cookie
   .split("=")[1];
 
 const settings = {
-  api_key: "4eb725384190b171df788e34396d1fc9",
-  secret: "d0cc230195130abe6eeadd2bf5921d7c",
+  api_key: "f160afe899a3f33962e02933f55d51cf",
+  secret: "ee76dc39c15dde4adda3a8a255a1b720",
   username: cookieUsername
 };
 
