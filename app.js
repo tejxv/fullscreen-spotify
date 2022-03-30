@@ -9,6 +9,9 @@ app.use("/login", express.static(__dirname + "/public/login"));
 app.use("/fullscreen", express.static(__dirname + "/public/fullscreen"));
 
 app.get("/", (req, res) => {
+  if (!req.cookies.username) {
+    res.cookie("username", "EMPTY");
+  }
   if (req.query.token) {
     res.cookie("token", req.query.token);
     res.redirect("/fullscreen");
@@ -22,5 +25,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+  console.log(`[Fullscreen Spotify] Listening on port ${port}`);
 });
