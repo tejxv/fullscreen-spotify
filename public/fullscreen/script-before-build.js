@@ -1,4 +1,4 @@
-const { LastFmNode } = require("lastfm");
+const { LastFmNode } = require("@wheredidhugo/lastfm");
 
 const cookieUsername = document.cookie
   .split("; ")
