@@ -1,9 +1,9 @@
 {
   "name": "fullscreen-spotify",
   "version": "1.0.0",
-  "author": "",
-  "license": "",
-  "description": "",
+  "author": "Hugo <wheredidhugo@protonmail.com>",
+  "license": "MIT",
+  "description": "🎧 A website that simply shows what you’re listening to using Last.fm",
   "main": "app.js",
   "keywords": [],
   "scripts": {
