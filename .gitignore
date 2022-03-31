@@ -3,3 +3,7 @@ template/
 
 package-lock.json
 public/fullscreen/script.js
+public/login/script.js
+
+.env
+.env.push

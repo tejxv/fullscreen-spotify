@@ -9,12 +9,13 @@
   "scripts": {
     "start": "node .",
     "dev": "nodemon .",
-    "build": "npx browserify ./public/fullscreen/script-before-build.js -o ./public/fullscreen/script.js"
+    "build": "node build.js"
   },
   "dependencies": {
     "@wheredidhugo/lastfm": "^0.9.4",
     "cookie-parser": "^1.4.6",
     "crypto": "^1.0.1",
+    "dotenv": "^16.0.0",
     "express": "^4.17.3"
   }
 }

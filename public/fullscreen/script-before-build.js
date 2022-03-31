@@ -6,15 +6,16 @@ const cookieUsername = document.cookie
   .split("=")[1];
 
 const settings = {
-  api_key: "f160afe899a3f33962e02933f55d51cf",
-  secret: "ee76dc39c15dde4adda3a8a255a1b720",
-  username: cookieUsername
+  api_key: process.env.API_KEY,
+  secret: process.env.SECRET
 };
 
 const lastfm = new LastFmNode({
   api_key: settings.api_key,
   secret: settings.secret,
 });
+
+var username = cookieUsername;
 
 const cookieToken = document.cookie
   .split("; ")
@@ -25,8 +26,9 @@ lastfm.request("auth.getSession", {
   token: cookieToken,
   handlers: {
     success: function (data) {
-      Object.assign(settings, { username: data.session.name })
-      document.cookie = `username=${data.session.name}; path=/`;
+      if (data.session.name) {
+        document.cookie = `username=${data.session.name}; path=/`;
+      }
       console.log(data);
     },
     error: function (data) {
@@ -35,11 +37,11 @@ lastfm.request("auth.getSession", {
   },
 });
 
-if (settings.username === "EMPTY" || cookieUsername === "EMPTY") {
+if (username === "EMPTY" || cookieUsername === "EMPTY") {
   document.getElementById("empty").innerText = "Please reload your browser.";
 }
 
-const trackStream = lastfm.stream(settings.username);
+const trackStream = lastfm.stream(username);
 
 trackStream.start();
 

@@ -1,5 +1,5 @@
 const express = require("express"),
-  cookieParser = require('cookie-parser');
+  cookieParser = require("cookie-parser");
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
     if (!req.cookies.username === "EMPTY") {
       res.redirect("/fullscreen");
     } else {
-      res.redirect("/login")
+      res.redirect("/login");
     }
   }
 });
