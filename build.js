@@ -1,24 +1,28 @@
 const browserify = require("browserify");
 const envify = require("envify");
-const fs = require('fs');
+const fs = require("fs");
 require("dotenv").config();
 
 browserify()
-    .add("./public/fullscreen/script-before-build.js")
-    .transform(envify({
-        API_KEY: process.env.API_KEY,
-        SECRET: process.env.SECRET
-    }))
-    .bundle()
-    .pipe(fs.createWriteStream("./public/fullscreen/script.js"))
+  .add("./public/fullscreen/script-before-build.js")
+  .transform(
+    envify({
+      API_KEY: process.env.API_KEY,
+      SECRET: process.env.SECRET,
+    })
+  )
+  .bundle()
+  .pipe(fs.createWriteStream("./public/fullscreen/script.js"));
 
 browserify()
-    .add("./public/login/script-before-build.js")
-    .transform(envify({
-        API_KEY: process.env.API_KEY
-    }))
-    .bundle()
-    .pipe(fs.createWriteStream("./public/login/script.js"))
+  .add("./public/login/script-before-build.js")
+  .transform(
+    envify({
+      API_KEY: process.env.API_KEY,
+    })
+  )
+  .bundle()
+  .pipe(fs.createWriteStream("./public/login/script.js"));
 
 /*
 try {
