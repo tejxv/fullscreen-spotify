@@ -1,6 +1,8 @@
 node_modules/
 template/
 
+.DS_Store
+
 package-lock.json
 public/fullscreen/script.js
 public/login/script.js
