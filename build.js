@@ -1,7 +1,9 @@
 const exec = require("child_process").exec;
 require("dotenv").config()
 
-console.log(process.ENV)
+console.log(process.env)
+console.log(process.env.API_KEY)
+console.log(process.env.SECRET)
 
 try {
     console.log("[Fullscreen Spotify] Building the fullscreen script...");
