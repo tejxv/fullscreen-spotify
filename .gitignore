@@ -4,6 +4,7 @@ template/
 .DS_Store
 
 package-lock.json
+
 public/fullscreen/script.js
 public/login/script.js
 
