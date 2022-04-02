@@ -1,4 +1,5 @@
 const execSync = require("child_process").execSync;
+require("dotenv").config()
 
 try {
     console.log("[Fullscreen Spotify] Building the fullscreen script...");
